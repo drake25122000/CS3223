@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c42011ac-40b6-4290-8016-e293a610da82" name="Default Changelist" comment="" />
+    <list default="true" id="c42011ac-40b6-4290-8016-e293a610da82" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/qp/operators/Join.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/operators/Join.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/qp/operators/OpType.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/operators/OpType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/qp/optimizer/PlanCost.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/optimizer/PlanCost.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/qp/optimizer/RandomInitialPlan.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/optimizer/RandomInitialPlan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/qp/optimizer/RandomOptimizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/optimizer/RandomOptimizer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/qp/utils/Condition.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/utils/Condition.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/qp/utils/SQLQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/utils/SQLQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/qp/utils/Schema.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/utils/Schema.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/qp/operators/BlockNestedLoopJoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/operators/BlockNestedLoopJoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/qp/operators/Distinct.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/qp/optimizer/PlanCost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/optimizer/PlanCost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/qp/optimizer/RandomInitialPlan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/optimizer/RandomInitialPlan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/qp/optimizer/RandomOptimizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/optimizer/RandomOptimizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/qp/parser/sym.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/parser/sym.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/qp/utils/Batch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/utils/Batch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/qp/utils/Schema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/utils/Schema.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1nvL283j4ZL7CJHMEs6sE9nhaQ6" />
   <component name="ProjectViewState">
@@ -15,11 +37,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Batch.build">
     <configuration name="build" type="BatchConfigurationType" factoryName="Batch" temporary="true">
       <module name="COMPONENT" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -31,9 +54,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="queryenv" type="BatchConfigurationType" factoryName="Batch" temporary="true">
+      <module name="COMPONENT" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\drake251200\Desktop\NUS\Y2S2\CS3223\COMPONENT" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="queryenv.bat" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="build.sh" type="ShConfigurationType" temporary="true">
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/build.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Batch.build" />
+        <item itemvalue="Shell Script.build.sh" />
+        <item itemvalue="Batch.queryenv" />
       </list>
     </recent_temporary>
   </component>
@@ -67,29 +111,42 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="115" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1612265721055" />
-    <state width="1174" height="187" key="GridCell.Tab.0.bottom" timestamp="1612329052949">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1174" height="186" key="GridCell.Tab.0.bottom" timestamp="1613715935288">
+      <screen x="-1920" y="0" width="1536" height="864" />
     </state>
-    <state width="1174" height="187" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1612329052949" />
-    <state width="1174" height="187" key="GridCell.Tab.0.center" timestamp="1612329052949">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1174" height="186" key="GridCell.Tab.0.bottom/0.0.1536.864/-1920.0.1536.864@-1920.0.1536.864" timestamp="1613715935288" />
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1613662659147" />
+    <state width="1174" height="186" key="GridCell.Tab.0.center" timestamp="1613715935287">
+      <screen x="-1920" y="0" width="1536" height="864" />
     </state>
-    <state width="1174" height="187" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1612329052949" />
-    <state width="1174" height="187" key="GridCell.Tab.0.left" timestamp="1612329052949">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1174" height="186" key="GridCell.Tab.0.center/0.0.1536.864/-1920.0.1536.864@-1920.0.1536.864" timestamp="1613715935287" />
+    <state width="1493" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1613662659147" />
+    <state width="1174" height="186" key="GridCell.Tab.0.left" timestamp="1613715935287">
+      <screen x="-1920" y="0" width="1536" height="864" />
     </state>
-    <state width="1174" height="187" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1612329052949" />
-    <state width="1174" height="187" key="GridCell.Tab.0.right" timestamp="1612329052949">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1174" height="186" key="GridCell.Tab.0.left/0.0.1536.864/-1920.0.1536.864@-1920.0.1536.864" timestamp="1613715935287" />
+    <state width="1493" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1613662659147" />
+    <state width="1174" height="186" key="GridCell.Tab.0.right" timestamp="1613715935288">
+      <screen x="-1920" y="0" width="1536" height="864" />
     </state>
-    <state width="1174" height="187" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1612329052949" />
+    <state width="1174" height="186" key="GridCell.Tab.0.right/0.0.1536.864/-1920.0.1536.864@-1920.0.1536.864" timestamp="1613715935288" />
+    <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1613662659147" />
     <state x="169" y="13" key="SettingsEditor" timestamp="1612328158664">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="169" y="13" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1612328158664" />
-    <state x="357" y="260" key="com.intellij.ide.util.TipDialog" timestamp="1613207224308">
+    <state width="254" height="198" key="ShowFilterAction_Filter_Popup" timestamp="1613703776920">
+      <screen x="-1920" y="0" width="1536" height="864" />
+    </state>
+    <state width="254" height="198" key="ShowFilterAction_Filter_Popup/0.0.1536.864/-1920.0.1536.864@-1920.0.1536.864" timestamp="1613703776920" />
+    <state x="357" y="260" key="com.intellij.ide.util.TipDialog" timestamp="1613632545170">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="357" y="260" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1613207224308" />
+    <state x="357" y="260" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1613632545170" />
+    <state x="-1489" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1613710163371">
+      <screen x="-1920" y="0" width="1536" height="864" />
+    </state>
+    <state x="-1489" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864/-1920.0.1536.864@-1920.0.1536.864" timestamp="1613710163371" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1613660797139" />
   </component>
 </project>

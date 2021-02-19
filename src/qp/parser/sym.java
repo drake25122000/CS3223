@@ -9,7 +9,6 @@ package qp.parser;
 /** CUP generated class containing symbol constants. */
 public class sym {
   /* terminals */
-  public static final int DISTINCT = 26;
   public static final int ORDERBY = 18;
   public static final int WHERE = 16;
   public static final int FROM = 15;
@@ -37,4 +36,3 @@ public class sym {
   public static final int COUNT = 22;
   public static final int GREATERTHAN = 9;
 }
-
