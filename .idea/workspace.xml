@@ -2,60 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c42011ac-40b6-4290-8016-e293a610da82" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/classes/query12.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/qp/operators/OrderBy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/QueryMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/QueryMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/operators/Distinct.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/operators/Distinct.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/operators/OpType.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/operators/OpType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/operators/Sort.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/operators/Sort.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/optimizer/PlanCost.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/optimizer/PlanCost.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/optimizer/RandomInitialPlan.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/optimizer/RandomInitialPlan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/optimizer/RandomOptimizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/optimizer/RandomOptimizer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/qp/parser/CUP$parser$actions.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/parser/CUP$parser$actions.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/qp/parser/Scaner.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/parser/Scaner.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/qp/parser/parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/parser/parser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/qp/parser/sym.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/parser/sym.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/utils/SQLQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/utils/SQLQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/CAccept.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/CAccept.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/CAcceptAnchor.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/CAcceptAnchor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/CAlloc.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/CAlloc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/CBunch.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/CBunch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/CDTrans.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/CDTrans.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/CDfa.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/CDfa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/CEmit.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/CEmit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/CError.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/CError.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/CInput.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/CInput.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/CLexGen.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/CLexGen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/CMakeNfa.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/CMakeNfa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/CMinimize.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/CMinimize.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/CNfa.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/CNfa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/CNfa2Dfa.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/CNfa2Dfa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/CNfaPair.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/CNfaPair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/CSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/CSet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/CSimplifyNfa.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/CSimplifyNfa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/CSpec.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/CSpec.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/CUtility.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/CUtility.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/SparseBitSet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/SparseBitSet$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/SparseBitSet$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/SparseBitSet$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/SparseBitSet$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/SparseBitSet$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/SparseBitSet$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/SparseBitSet$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/SparseBitSet$BinOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/SparseBitSet$BinOp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JLex/SparseBitSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/JLex/SparseBitSet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/QueryMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QueryMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/operators/Distinct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/operators/Distinct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/operators/OpType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/operators/OpType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/operators/Sort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/operators/Sort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/optimizer/PlanCost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/optimizer/PlanCost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/optimizer/RandomInitialPlan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/optimizer/RandomInitialPlan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/optimizer/RandomOptimizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/optimizer/RandomOptimizer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/qp/parser/Scaner.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/qp/parser/parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/parser/parser.cup" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/qp/parser/parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/parser/parser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/qp/parser/scaner.lex" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/parser/scaner.lex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/qp/parser/sym.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/parser/sym.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/utils/SQLQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/utils/SQLQuery.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,26 +111,26 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="640" y="153" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1613906705599" />
-    <state width="1174" height="179" key="GridCell.Tab.0.bottom" timestamp="1614271785681">
+    <state width="1174" height="179" key="GridCell.Tab.0.bottom" timestamp="1614273225733">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1174" height="186" key="GridCell.Tab.0.bottom/0.0.1536.864/-1920.0.1536.864@-1920.0.1536.864" timestamp="1613719436167" />
-    <state width="1174" height="179" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1614271785681" />
-    <state width="1174" height="179" key="GridCell.Tab.0.center" timestamp="1614271785681">
+    <state width="1174" height="179" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1614273225733" />
+    <state width="1174" height="179" key="GridCell.Tab.0.center" timestamp="1614273225732">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1174" height="186" key="GridCell.Tab.0.center/0.0.1536.864/-1920.0.1536.864@-1920.0.1536.864" timestamp="1613719436167" />
-    <state width="1174" height="179" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1614271785681" />
-    <state width="1174" height="179" key="GridCell.Tab.0.left" timestamp="1614271785681">
+    <state width="1174" height="179" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1614273225732" />
+    <state width="1174" height="179" key="GridCell.Tab.0.left" timestamp="1614273225732">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1174" height="186" key="GridCell.Tab.0.left/0.0.1536.864/-1920.0.1536.864@-1920.0.1536.864" timestamp="1613719436167" />
-    <state width="1174" height="179" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1614271785681" />
-    <state width="1174" height="179" key="GridCell.Tab.0.right" timestamp="1614271785681">
+    <state width="1174" height="179" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1614273225732" />
+    <state width="1174" height="179" key="GridCell.Tab.0.right" timestamp="1614273225732">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1174" height="186" key="GridCell.Tab.0.right/0.0.1536.864/-1920.0.1536.864@-1920.0.1536.864" timestamp="1613719436167" />
-    <state width="1174" height="179" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1614271785681" />
+    <state width="1174" height="179" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1614273225732" />
     <state x="169" y="13" key="SettingsEditor" timestamp="1612328158664">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
