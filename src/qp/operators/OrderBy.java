@@ -13,7 +13,7 @@ import qp.operators.Sort;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Distinct extends Operator {
+public class OrderBy extends Operator {
 
     Operator base;                      // Base table to project
     ArrayList<Attribute> attrset;       // Set of attributes to project
@@ -36,7 +36,7 @@ public class Distinct extends Operator {
      **/
     int[] attrIndex;
 
-    public Distinct(Operator base, ArrayList<Attribute> as, int type, int numOfBuff) {
+    public OrderBy(Operator base, ArrayList<Attribute> as, int type, int numOfBuff) {
         super(type);
         this.base = base;
         this.attrset = as;
@@ -97,37 +97,7 @@ public class Distinct extends Operator {
             return null;
         }
 
-        /** An output buffer is initiated **/
-        outbatch = new Batch(batchsize);
-
-        Batch temp;
-
-        while ( ( (temp = base.next()) != null ) && !outbatch.isFull() ) {
-            for (int i = 0 ; i < temp.size() ; i++) {
-                Tuple fromBase = temp.get(i);
-                if (trackTuple == null) {
-                    outbatch.add(fromBase);
-                    trackTuple = fromBase;
-                    System.out.println(fromBase);
-                } else {
-                    if ( compareTuples(fromBase, trackTuple) != 0 ) {
-                        outbatch.add(fromBase);
-                        trackTuple = fromBase;
-                        System.out.println(fromBase);
-
-                    }
-                }
-            }
-        }
-
-        if (temp == null && outbatch.isEmpty()) {
-            eos = true;
-            return null;
-        }
-
-        //while ()
-
-        return outbatch;
+        return base.next();
 
     }
 

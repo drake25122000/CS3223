@@ -1,5 +1,5 @@
 /**
- * Select Operation
+ * Sort Operation
  **/
 
 package qp.operators;
@@ -22,6 +22,7 @@ public class Sort extends Operator {
     int numSortedRuns;                  // Number of sorted runs
     String rfname;                      // The file name where the right table is materialized
     SortedRun finalSortedRun;           // Final single sorted run from out
+    static int desc = 1;
 
     /**
      * The following fields are required during
@@ -57,6 +58,10 @@ public class Sort extends Operator {
 
     public void setNumOfBuff(int buff) {
         this.numOfBuff = buff;
+    }
+
+    public static void setDesc() {
+        desc = -1;
     }
 
     /**
@@ -96,12 +101,19 @@ public class Sort extends Operator {
             out = new ObjectOutputStream(new FileOutputStream(rfname));
             // Generate sorted runs
             while ((temp = base.next()) != null) {
+                //System.out.println(temp.size());
                 for (int k = 0; k < numOfBuff; k++) {
                     for (int p = 0; p < temp.size(); p++) {
+                        //System.out.println(temp.get(p));
                         tempTuples.add(temp.get(p));
                     }
-                    if ((temp = base.next()) == null) break;
+
+                    if ( k < numOfBuff - 1 ) {
+                        if ((temp = base.next()) == null) break;
+                    }
                 }
+
+                //System.out.println("Count: " + count);
 
                 Collections.sort(tempTuples, (tup1, tup2) -> compareTuples(tup1, tup2));
 
@@ -124,7 +136,7 @@ public class Sort extends Operator {
 
                 rfname = "Stemp-" + String.valueOf(filenum);
                 // To initialize Object Input Stream everytime after merging process
-                in = new ObjectInputStream(new FileInputStream(rfname));]
+                in = new ObjectInputStream(new FileInputStream(rfname));
 
                 // To track number of sorted runs produced by the merging process
                 numSortedRuns = 0;
@@ -147,6 +159,7 @@ public class Sort extends Operator {
 
                         // To count sorted runs obtain from file
                         int count = 0;
+
 
                         // Check whether count is smaller than numOfBuff - 1 and tempSr is not null
                         while (count < numOfBuff - 1 && tempSr != null) {
@@ -171,7 +184,6 @@ public class Sort extends Operator {
                     System.out.println("Sort: Error in reading temporary file");
                 }
                 out.close();
-                it++;
 
             }
         } catch (EOFException e) {
@@ -188,6 +200,7 @@ public class Sort extends Operator {
             System.exit(1);
         }
 
+        filenum = filenum == 0 ? 1 : 0;
         //filenum--;
         filenum = filenum == 0 ? 1 : 0;
         rfname = "Stemp-" + String.valueOf(filenum);
@@ -195,6 +208,7 @@ public class Sort extends Operator {
             // To get the final sorted runs from the file
             in = new ObjectInputStream(new FileInputStream(rfname));
             finalSortedRun = (SortedRun) in.readObject();
+            System.out.println(finalSortedRun.size());
         } catch (EOFException e) {
             try {
                 in.close();
@@ -247,7 +261,6 @@ public class Sort extends Operator {
             minimum = 0;
         }
 
-
         try {
             // Write temp object to file with rfname as the name of the file
             out.writeObject(temp);
@@ -270,15 +283,17 @@ public class Sort extends Operator {
             return null;
         }
 
+
         /** An output buffer is initiated **/
         outbatch = new Batch(batchsize);
 
         /** keep on checking the incoming pages until
-         ** the output buffer is full
+         ** the output buffer is full & the final sorted run is empty
          **/
-        while (!outbatch.isFull()) {
+        while (!outbatch.isFull() && !finalSortedRun.isEmpty()) {
             outbatch.add(finalSortedRun.poll(0));
         }
+
         return outbatch;
 
     }
@@ -310,7 +325,7 @@ public class Sort extends Operator {
             }
         }
 
-        return res;
+        return res * desc;
     }
 
 }

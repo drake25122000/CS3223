@@ -21,7 +21,8 @@ public class RandomInitialPlan {
     ArrayList<String> fromlist;
     ArrayList<Condition> selectionlist;   // List of select conditons
     ArrayList<Condition> joinlist;        // List of join conditions
-    ArrayList<Attribute> groupbylist;
+    ArrayList<Attribute> groupbylist;     //
+    ArrayList<Attribute> orderbylist;
     int numJoin;            // Number of joins in this query
     HashMap<String, Operator> tab_op_hash;  // Table name to the Operator
     Operator root;          // Root of the query plan tree
@@ -33,6 +34,7 @@ public class RandomInitialPlan {
         selectionlist = sqlquery.getSelectionList();
         joinlist = sqlquery.getJoinList();
         groupbylist = sqlquery.getGroupByList();
+        orderbylist = sqlquery.getOrderByList();
         numJoin = joinlist.size();
     }
 
@@ -48,16 +50,6 @@ public class RandomInitialPlan {
      **/
     public Operator prepareInitialPlan() {
 
-        if (sqlquery.isDistinct()) {
-            createDistinctOp();
-        }
-
-
-        if (sqlquery.getOrderByList().size() > 0) {
-            System.err.println("Orderby is not implemented.");
-            System.exit(1);
-        }
-
         tab_op_hash = new HashMap<>();
         createScanOp();
         createSelectOp();
@@ -69,6 +61,14 @@ public class RandomInitialPlan {
         }
 
         createProjectOp();
+
+        if (sqlquery.getOrderByList().size() > 0) {
+            createOrderByOp();
+        }
+
+        if (sqlquery.isDistinct()) {
+            createDistinctOp();
+        }
 
         return root;
     }
@@ -160,6 +160,15 @@ public class RandomInitialPlan {
     public void createDistinctOp() {
 
         Distinct operator = new Distinct(root, projectlist, OpType.DISTINCT, BufferManager.numBuffer);
+        operator.setSchema(root.getSchema());
+        root = operator;
+    }
+
+    public void createOrderByOp() {
+        OrderBy operator = new OrderBy(root, orderbylist, OpType.ORDERBY, BufferManager.numBuffer);
+        if (sqlquery.isDescending()) {
+            Sort.setDesc();
+        }
         operator.setSchema(root.getSchema());
         root = operator;
     }
