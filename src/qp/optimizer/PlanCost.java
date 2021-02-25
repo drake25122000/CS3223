@@ -272,6 +272,7 @@ public class PlanCost {
         }
         return numtuples;
     }
+
     protected long getStatistics(Sort node) {
         return 1;
     }
