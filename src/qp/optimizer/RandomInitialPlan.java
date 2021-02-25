@@ -48,14 +48,10 @@ public class RandomInitialPlan {
      **/
     public Operator prepareInitialPlan() {
 
-        /*if (sqlquery.isDistinct()) {
+        if (sqlquery.isDistinct()) {
             createDistinctOp();
-        }*/
-
-        if (sqlquery.getGroupByList().size() > 0) {
-            System.err.println("GroupBy is not implemented.");
-            System.exit(1);
         }
+
 
         if (sqlquery.getOrderByList().size() > 0) {
             System.err.println("Orderby is not implemented.");
@@ -68,6 +64,10 @@ public class RandomInitialPlan {
         if (numJoin != 0) {
             createJoinOp();
         }
+        if (sqlquery.getGroupByList().size() > 0) {
+            createGroupByOp();
+        }
+
         createProjectOp();
 
         return root;
@@ -115,6 +115,21 @@ public class RandomInitialPlan {
     }
 
     /**
+     * Create Group By Operator for each of the table
+     * * mentioned in from list
+     **/
+    public void createGroupByOp() {
+
+        //Operator base = root;
+        Sort sort = new Sort(root, groupbylist, OpType.SORT, BufferManager.numBuffer);
+        //Schema newSchema = base.getSchema().subSchema(groupbylist);
+        sort.setSchema(root.getSchema());
+        root = sort;
+
+
+    }
+
+    /**
      * Create Selection Operators for each of the
      * * selection condition mentioned in Condition list
      **/
@@ -142,11 +157,12 @@ public class RandomInitialPlan {
     /**
      * Create distinct operators
      */
-    /*public void createDistinctOp() {
-        Distinct operator = new Distinct(root, sqlQuery.getProjectList());
+    public void createDistinctOp() {
+
+        Distinct operator = new Distinct(root, projectlist, OpType.DISTINCT, BufferManager.numBuffer);
         operator.setSchema(root.getSchema());
         root = operator;
-    }*/
+    }
 
 
     /**
@@ -178,7 +194,7 @@ public class RandomInitialPlan {
             /** randomly select a join type**/
             int numJMeth = JoinType.numJoinTypes();
             int joinMeth = RandNumb.randInt(0, numJMeth - 1);
-            jn.setJoinType(0);
+            jn.setJoinType(1);
             modifyHashtable(left, jn);
             modifyHashtable(right, jn);
             bitCList.set(jnnum);

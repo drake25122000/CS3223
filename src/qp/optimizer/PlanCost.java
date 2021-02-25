@@ -76,6 +76,8 @@ public class PlanCost {
             return getStatistics((Project) node);
         } else if (node.getOpType() == OpType.SCAN) {
             return getStatistics((Scan) node);
+        } else if (node.getOpType() == OpType.SORT) {
+            return getStatistics((Sort) node);
         }
         System.out.println("operator is not supported");
         isFeasible = false;
@@ -270,6 +272,10 @@ public class PlanCost {
         }
         return numtuples;
     }
+    protected long getStatistics(Sort node) {
+        return 1;
+    }
+
 
 }
 

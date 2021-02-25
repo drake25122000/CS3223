@@ -89,11 +89,6 @@ public class Schema implements Serializable {
         return newSchema;
     }
 
-//    // The schema after distinct operation
-//    public Schema distinct(ArrayList<Attribute> attributes) {
-//
-//    }
-
     /** To get schema due to result of project operation
      attrlist is the attirbuted that are projected **/
     public Schema subSchema(ArrayList<Attribute> attrlist) {
