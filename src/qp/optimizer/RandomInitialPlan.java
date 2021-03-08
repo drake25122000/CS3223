@@ -21,7 +21,8 @@ public class RandomInitialPlan {
     ArrayList<String> fromlist;
     ArrayList<Condition> selectionlist;   // List of select conditons
     ArrayList<Condition> joinlist;        // List of join conditions
-    ArrayList<Attribute> groupbylist;
+    ArrayList<Attribute> groupbylist;     //
+    ArrayList<Attribute> orderbylist;
     int numJoin;            // Number of joins in this query
     HashMap<String, Operator> tab_op_hash;  // Table name to the Operator
     Operator root;          // Root of the query plan tree
@@ -33,6 +34,7 @@ public class RandomInitialPlan {
         selectionlist = sqlquery.getSelectionList();
         joinlist = sqlquery.getJoinList();
         groupbylist = sqlquery.getGroupByList();
+        orderbylist = sqlquery.getOrderByList();
         numJoin = joinlist.size();
     }
 
@@ -48,27 +50,25 @@ public class RandomInitialPlan {
      **/
     public Operator prepareInitialPlan() {
 
-        /*if (sqlquery.isDistinct()) {
-            createDistinctOp();
-        }*/
-
-        if (sqlquery.getGroupByList().size() > 0) {
-            System.err.println("GroupBy is not implemented.");
-            System.exit(1);
-        }
-
-        if (sqlquery.getOrderByList().size() > 0) {
-            System.err.println("Orderby is not implemented.");
-            System.exit(1);
-        }
-
         tab_op_hash = new HashMap<>();
         createScanOp();
         createSelectOp();
         if (numJoin != 0) {
             createJoinOp();
         }
+        if (sqlquery.getGroupByList().size() > 0) {
+            createGroupByOp();
+        }
+
         createProjectOp();
+
+        if (sqlquery.getOrderByList().size() > 0) {
+            createOrderByOp();
+        }
+
+        if (sqlquery.isDistinct()) {
+            createDistinctOp();
+        }
 
         return root;
     }
@@ -115,6 +115,21 @@ public class RandomInitialPlan {
     }
 
     /**
+     * Create Group By Operator for each of the table
+     * * mentioned in from list
+     **/
+    public void createGroupByOp() {
+
+        //Operator base = root;
+        Sort sort = new Sort(root, groupbylist, OpType.SORT, BufferManager.numBuffer);
+        //Schema newSchema = base.getSchema().subSchema(groupbylist);
+        sort.setSchema(root.getSchema());
+        root = sort;
+
+
+    }
+
+    /**
      * Create Selection Operators for each of the
      * * selection condition mentioned in Condition list
      **/
@@ -142,11 +157,21 @@ public class RandomInitialPlan {
     /**
      * Create distinct operators
      */
-    /*public void createDistinctOp() {
-        Distinct operator = new Distinct(root, sqlQuery.getProjectList());
+    public void createDistinctOp() {
+
+        Distinct operator = new Distinct(root, projectlist, OpType.DISTINCT, BufferManager.numBuffer);
         operator.setSchema(root.getSchema());
         root = operator;
-    }*/
+    }
+
+    public void createOrderByOp() {
+        OrderBy operator = new OrderBy(root, orderbylist, OpType.ORDERBY, BufferManager.numBuffer);
+        if (sqlquery.isDescending()) {
+            Sort.setDesc();
+        }
+        operator.setSchema(root.getSchema());
+        root = operator;
+    }
 
 
     /**
@@ -178,7 +203,7 @@ public class RandomInitialPlan {
             /** randomly select a join type**/
             int numJMeth = JoinType.numJoinTypes();
             int joinMeth = RandNumb.randInt(0, numJMeth - 1);
-            jn.setJoinType(0);
+            jn.setJoinType(1);
             modifyHashtable(left, jn);
             modifyHashtable(right, jn);
             bitCList.set(jnnum);

@@ -121,4 +121,14 @@ public class Tuple implements Serializable {
         }
         return 0;
     }
+
+    @Override
+    public String toString() {
+        String res = "";
+
+        for (Object o: _data) {
+            res = res + o.toString() + " ";
+        }
+        return res;
+    }
 }
