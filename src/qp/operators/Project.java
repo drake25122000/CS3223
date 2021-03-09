@@ -16,7 +16,10 @@ public class Project extends Operator {
     Operator base;                 // Base table to project
     ArrayList<Attribute> attrset;  // Set of attributes to project
     int batchsize;                 // Number of tuples per outbatch
-
+	int max = -999999; // starting max value for MAX function
+	int min = 999999; // starting min value for MIN function
+	int count = 0; // variable to store COUNT
+	boolean aggPresent = false; // flag to check if the SELECT statements contain aggregate functions
     /**
      * The following fields are requied during execution
      * * of the Project Operator
@@ -29,6 +32,8 @@ public class Project extends Operator {
      * * that are to be projected
      **/
     int[] attrIndex;
+	int[] aggIndex; // index of attribute that is involved in aggregate operation
+	Object[] aggData; // Array to store all aggregated data
 
     public Project(Operator base, ArrayList<Attribute> as, int type) {
         super(type);
@@ -65,17 +70,37 @@ public class Project extends Operator {
          ** are required from the base operator
          **/
         Schema baseSchema = base.getSchema();
-        attrIndex = new int[attrset.size()];
+        
+		attrIndex = new int[attrset.size()];
+		aggIndex = new int[attrset.size()];
+		aggData = new Object[attrset.size()];
+		
         for (int i = 0; i < attrset.size(); ++i) {
             Attribute attr = attrset.get(i);
 
-            if (attr.getAggType() != Attribute.NONE) {
+            /*if (attr.getAggType() != Attribute.NONE) {
                 System.err.println("Aggragation is not implemented.");
                 System.exit(1);
-            }
+            }*/
 
             int index = baseSchema.indexOf(attr.getBaseAttribute());
             attrIndex[i] = index;
+			
+			if (attr.getAggType() == Attribute.MAX) {
+				aggIndex[i] = 1;
+				aggData[i] = (Object)max;
+			} 
+			else if(attr.getAggType() == Attribute.MIN) {
+				aggIndex[i] = 2;
+				aggData[i] = (Object)min;
+			}
+			else if(attr.getAggType() == Attribute.COUNT) {
+				aggIndex[i] = 3;
+				aggData[i] = (Object)count;
+			}
+			else {
+				aggIndex[i] = 0;
+			}
         }
         return true;
     }
@@ -87,25 +112,74 @@ public class Project extends Operator {
         outbatch = new Batch(batchsize);
         /** all the tuples in the inbuffer goes to the output buffer **/
         inbatch = base.next();
-
-        if (inbatch == null) {
-            return null;
+		//System.out.println("Enter");
+        
+		
+		if(aggPresent) {
+			if (inbatch == null) {
+				ArrayList<Object>aggResult = new ArrayList<>();
+				for (int i = 0; i<attrset.size(); i++) {
+					aggResult.add(aggData[i]);
+				}
+				Tuple aggTuple = new Tuple(aggResult);
+				outbatch.add(aggTuple);
+				aggPresent = false;
+					
+				return outbatch;
+			}
+		}
+			
+		if (inbatch == null) {	
+			return null;
         }
-
         for (int i = 0; i < inbatch.size(); i++) {
             Tuple basetuple = inbatch.get(i);
-            //Debug.PPrint(basetuple);
+           // Debug.PPrint(basetuple);
             //System.out.println();
             ArrayList<Object> present = new ArrayList<>();
-            for (int j = 0; j < attrset.size(); j++) {
-                Object data = basetuple.dataAt(attrIndex[j]);
-                present.add(data);
-            }
-            Tuple outtuple = new Tuple(present);
-            outbatch.add(outtuple);
-        }
-        return outbatch;
-    }
+            
+			for (int j = 0; j < attrset.size(); j++) {
+				Object data = basetuple.dataAt(attrIndex[j]);
+	            
+				if(aggIndex[j] == 0) {
+					present.add(data);
+				}
+				else if(aggIndex[j] == 1) {
+					aggPresent = true;
+						try {
+							if((int)data > (int)aggData[j]) {
+								aggData[j] = data;
+							}	
+						} catch (Exception e){
+								System.out.println("Attribute to be aggregated is not of type Int");
+								System.exit(1);
+						}
+				}
+				else if(aggIndex[j] == 2) {
+					aggPresent = true;
+						try {
+							if((int)data <(int)aggData[j]) {
+								aggData[j] = data;
+							}
+						} catch (Exception e) {
+								System.out.println("Attribute to be aggregated is not of type Int");
+								System.exit(1);
+						}
+				}
+				else if(aggIndex[j] == 3) {
+					aggPresent = true;
+					aggData[j] = (int)aggData[j] + 1;
+				}
+			}	
+			if (!aggPresent) {
+				Tuple outtuple = new Tuple(present);
+				outbatch.add(outtuple);
+			}
+			
+		}
+		
+		return outbatch;
+	}
 
     /**
      * Close the operator
