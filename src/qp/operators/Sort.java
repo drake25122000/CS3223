@@ -64,6 +64,10 @@ public class Sort extends Operator {
         desc = -1;
     }
 
+    public static int getNumberOfPasses() {
+        return 1;
+    }
+
     /**
      * Opens the connection to the base operator
      **/

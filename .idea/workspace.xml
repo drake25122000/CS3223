@@ -2,16 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c42011ac-40b6-4290-8016-e293a610da82" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/classes/query10.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classes/query5.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classes/query6.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classes/query7.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classes/query8.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/parser/CUP$parser$actions.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/parser/CUP$parser$actions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/parser/Scaner.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/parser/Scaner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/parser/parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/parser/parser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/parser/sym.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/parser/sym.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/parser/Scaner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/parser/parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/parser/parser.cup" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/parser/parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/parser/parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/parser/scaner.lex" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/parser/scaner.lex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/parser/sym.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/parser/sym.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/qp/operators/JoinType.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/operators/JoinType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/qp/operators/Operator.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/operators/Operator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/qp/operators/OrderBy.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/operators/OrderBy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/qp/operators/Sort.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/operators/Sort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/qp/optimizer/PlanCost.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/optimizer/PlanCost.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/qp/optimizer/RandomInitialPlan.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/optimizer/RandomInitialPlan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/qp/optimizer/RandomOptimizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/optimizer/RandomOptimizer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/qp/operators/JoinType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/operators/JoinType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/qp/operators/Operator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/operators/Operator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/qp/operators/OrderBy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/operators/OrderBy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/qp/operators/Sort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/operators/Sort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/qp/optimizer/PlanCost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/optimizer/PlanCost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/qp/optimizer/RandomInitialPlan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/optimizer/RandomInitialPlan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/qp/optimizer/RandomOptimizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/optimizer/RandomOptimizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/BILL.md" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/BILL.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/BILL.stat" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/BILL.stat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/BILL.tbl" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/BILL.tbl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/BILL.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/BILL.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +44,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/classes" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\drake251200\Desktop\NUS\Y2S2\CS3223\COMPONENT\classes" />
+    </key>
   </component>
   <component name="RunManager" selected="Batch.build">
     <configuration name="build" type="BatchConfigurationType" factoryName="Batch" temporary="true">
@@ -103,34 +123,34 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="115" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1612265721055" />
-    <state x="691" y="237" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1614225926269">
+    <state x="691" y="237" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615831735151">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="691" y="237" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1614225926269" />
+    <state x="691" y="237" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1615831735151" />
     <state x="640" y="153" key="FileChooserDialogImpl" timestamp="1613906705599">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="640" y="153" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1613906705599" />
-    <state width="1174" height="179" key="GridCell.Tab.0.bottom" timestamp="1614273225733">
+    <state width="1493" height="221" key="GridCell.Tab.0.bottom" timestamp="1615833188427">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1174" height="186" key="GridCell.Tab.0.bottom/0.0.1536.864/-1920.0.1536.864@-1920.0.1536.864" timestamp="1613719436167" />
-    <state width="1174" height="179" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1614273225733" />
-    <state width="1174" height="179" key="GridCell.Tab.0.center" timestamp="1614273225732">
+    <state width="1493" height="221" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1615833188427" />
+    <state width="1493" height="221" key="GridCell.Tab.0.center" timestamp="1615833188427">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1174" height="186" key="GridCell.Tab.0.center/0.0.1536.864/-1920.0.1536.864@-1920.0.1536.864" timestamp="1613719436167" />
-    <state width="1174" height="179" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1614273225732" />
-    <state width="1174" height="179" key="GridCell.Tab.0.left" timestamp="1614273225732">
+    <state width="1493" height="221" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1615833188427" />
+    <state width="1493" height="221" key="GridCell.Tab.0.left" timestamp="1615833188427">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1174" height="186" key="GridCell.Tab.0.left/0.0.1536.864/-1920.0.1536.864@-1920.0.1536.864" timestamp="1613719436167" />
-    <state width="1174" height="179" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1614273225732" />
-    <state width="1174" height="179" key="GridCell.Tab.0.right" timestamp="1614273225732">
+    <state width="1493" height="221" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1615833188427" />
+    <state width="1493" height="221" key="GridCell.Tab.0.right" timestamp="1615833188427">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1174" height="186" key="GridCell.Tab.0.right/0.0.1536.864/-1920.0.1536.864@-1920.0.1536.864" timestamp="1613719436167" />
-    <state width="1174" height="179" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1614273225732" />
+    <state width="1493" height="221" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1615833188427" />
     <state x="169" y="13" key="SettingsEditor" timestamp="1612328158664">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -139,20 +159,20 @@
       <screen x="-1920" y="0" width="1536" height="864" />
     </state>
     <state width="254" height="198" key="ShowFilterAction_Filter_Popup/0.0.1536.864/-1920.0.1536.864@-1920.0.1536.864" timestamp="1613703776920" />
-    <state x="357" y="260" key="com.intellij.ide.util.TipDialog" timestamp="1614168886786">
+    <state x="357" y="260" key="com.intellij.ide.util.TipDialog" timestamp="1615886067056">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="357" y="260" key="com.intellij.ide.util.TipDialog/0.0.1536.864/-1920.0.1536.864@0.0.1536.864" timestamp="1613881537165" />
     <state x="357" y="260" key="com.intellij.ide.util.TipDialog/0.0.1536.864/1920.0.1280.720@0.0.1536.864" timestamp="1613844512614" />
-    <state x="357" y="260" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1614168886786" />
+    <state x="357" y="260" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1615886067056" />
     <state x="669" y="316" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614222419133">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="669" y="316" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1614222419133" />
-    <state x="486" y="99" width="738" height="596" key="find.popup" timestamp="1614271439571">
+    <state x="486" y="99" width="738" height="596" key="find.popup" timestamp="1615829611960">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="486" y="99" width="738" height="596" key="find.popup/0.0.1536.864@0.0.1536.864" timestamp="1614271439571" />
+    <state x="486" y="99" width="738" height="596" key="find.popup/0.0.1536.864@0.0.1536.864" timestamp="1615829611960" />
     <state x="300" y="11" key="new project wizard" timestamp="1613906707159">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
