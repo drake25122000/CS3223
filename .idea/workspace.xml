@@ -1,32 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c42011ac-40b6-4290-8016-e293a610da82" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/classes/query10.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/query5.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/query6.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/query7.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/query8.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/operators/JoinType.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/operators/JoinType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/operators/Operator.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/operators/Operator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/operators/OrderBy.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/operators/OrderBy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/operators/Sort.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/operators/Sort.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/optimizer/PlanCost.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/optimizer/PlanCost.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/optimizer/RandomInitialPlan.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/optimizer/RandomInitialPlan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/optimizer/RandomOptimizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/optimizer/RandomOptimizer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/operators/JoinType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/operators/JoinType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/operators/Operator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/operators/Operator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/operators/OrderBy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/operators/OrderBy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/operators/Sort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/operators/Sort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/optimizer/PlanCost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/optimizer/PlanCost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/optimizer/RandomInitialPlan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/optimizer/RandomInitialPlan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/optimizer/RandomOptimizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/optimizer/RandomOptimizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcases/BILL.md" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/BILL.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcases/BILL.stat" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/BILL.stat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcases/BILL.tbl" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/BILL.tbl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcases/BILL.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/BILL.txt" afterDir="false" />
-    </list>
+    <list default="true" id="c42011ac-40b6-4290-8016-e293a610da82" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
