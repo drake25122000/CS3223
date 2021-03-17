@@ -13,7 +13,6 @@ public class Sort extends Operator {
     Operator base;                      // Base operator
     Condition con;                      // Select condition
     int batchsize;                      // Number of tuples per outbatch
-    ArrayList<SortedRun> sr;            // List of sorted runs;
     ArrayList<Integer> attIndexList;    // List of attribute index to be sort
     ArrayList<Attribute> attList;       // List of attribute to be sort
     static int filenum = 0;             // To get unique filenum for this operation
@@ -32,7 +31,7 @@ public class Sort extends Operator {
     Batch outbatch;                     // This is the current output buffer
     int start;                          // Cursor position in the input buffer
     Schema schema;                      // Schema of th
-    int numOfBuff;
+    int numOfBuff;                      // Number of buffer available
     SortedRun finale;
 
     /**
@@ -89,40 +88,47 @@ public class Sort extends Operator {
             this.attIndexList.add(schema.indexOf(att));
         }
 
-        // Initialize list of Sorted Run
-        sr = new ArrayList<SortedRun>();
-
         // Initialize temp page to receive data from base
         Batch temp;
 
         // Initialize arraylist of tuples to be insert to SortedRuns
         ArrayList<Tuple> tempTuples = new ArrayList<>();
 
-        // Initialize target file name
-        rfname = "Stemp-" + String.valueOf(filenum);
-
         try {
-            out = new ObjectOutputStream(new FileOutputStream(rfname));
+
             // Generate sorted runs
             while ((temp = base.next()) != null) {
+                // Initialize target file name
+                rfname = "Stemp-" + String.valueOf(filenum);
+                out = new ObjectOutputStream(new FileOutputStream(rfname));
                 //System.out.println(temp.size());
+
                 for (int k = 0; k < numOfBuff; k++) {
                     for (int p = 0; p < temp.size(); p++) {
                         //System.out.println(temp.get(p));
                         tempTuples.add(temp.get(p));
                     }
 
+
                     if ( k < numOfBuff - 1 ) {
                         if ((temp = base.next()) == null) break;
                     }
                 }
-
                 //System.out.println("Count: " + count);
 
                 Collections.sort(tempTuples, (tup1, tup2) -> compareTuples(tup1, tup2));
 
-                out.writeObject(new SortedRun(tempTuples));
+                TupleWriter tw = new TupleWriter(rfname, tempTuples.size() * tuplesize);
+                tw.open();
+
+                for (int i = 0 ; i < tempTuples.size() ; i++) {
+                    tw.next(tempTuples.get(i));
+                }
+
+                tw.close();
+                //out.writeObject(new SortedRun(tempTuples));
                 numSortedRuns++;
+                filenum++;
                 tempTuples = new ArrayList<>();
 
             }
@@ -133,10 +139,10 @@ public class Sort extends Operator {
             return false;
         }
 
+        filenum = 0;
         try {
             // Check whether the merge process still produce sorted runs more than 1
             while (numSortedRuns > 1) {
-
 
                 rfname = "Stemp-" + String.valueOf(filenum);
                 // To initialize Object Input Stream everytime after merging process
@@ -163,7 +169,6 @@ public class Sort extends Operator {
 
                         // To count sorted runs obtain from file
                         int count = 0;
-
 
                         // Check whether count is smaller than numOfBuff - 1 and tempSr is not null
                         while (count < numOfBuff - 1 && tempSr != null) {
@@ -241,6 +246,7 @@ public class Sort extends Operator {
         return true;
     }
 
+   
     public void mergeRuns(ArrayList<SortedRun> sortedruns) {
 
         SortedRun temp = new SortedRun(new ArrayList<Tuple>());
