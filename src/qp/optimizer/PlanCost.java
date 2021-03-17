@@ -153,6 +153,9 @@ public class PlanCost {
                 int numOfLeftBlocks = (int) (leftpages / (numbuff - 2));
                 joincost = numOfLeftBlocks * rightpages;
                 break;
+            case JoinType.SORTMERGE:
+                joincost = 0; // TODO
+                break;
             default:
                 System.out.println("join type is not supported");
                 return 0;

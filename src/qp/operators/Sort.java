@@ -208,7 +208,7 @@ public class Sort extends Operator {
             // To get the final sorted runs from the file
             in = new ObjectInputStream(new FileInputStream(rfname));
             finalSortedRun = (SortedRun) in.readObject();
-            System.out.println(finalSortedRun.size());
+            //System.out.println(finalSortedRun.size());
         } catch (EOFException e) {
             try {
                 in.close();
