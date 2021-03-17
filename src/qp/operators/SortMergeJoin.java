@@ -169,10 +169,7 @@ public class SortMergeJoin extends Join {
         rightpart.add(righttuple);
         Tuple topart = getRightTuple();
         while (!eosr && righttuple.checkJoin(topart, rightindex, rightindex)) {
-
-
             rightpart.add(topart);
-
             topart = getRightTuple();
         }
         rcurs--;
