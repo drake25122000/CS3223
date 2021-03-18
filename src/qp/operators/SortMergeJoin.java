@@ -24,20 +24,20 @@ public class SortMergeJoin extends Join {
     Batch outbatch;                 // Buffer page for output
     Batch leftbatch;              // Buffer blocks for left input stream
     Batch rightbatch;               // Buffer page for right input stream
-    Tuple lefttuple;
-    Tuple righttuple;
-    ArrayList<Tuple> leftpart;
-    ArrayList<Tuple> rightpart;
+    Tuple lefttuple;                // Current left tuple
+    Tuple righttuple;               // Current right tuple
+    ArrayList<Tuple> leftpart;      // Left partition
+    ArrayList<Tuple> rightpart;     // Right partition
     ObjectInputStream in;           // File pointer to the right hand materialized file
 
     int lcurs;                      // Cursor for left side buffer
     int rcurs;                      // Cursor for right side buffer
-    int lpcurs;
-    int rpcurs;
+    int lpcurs;                     // Cursor for left side partition
+    int rpcurs;                     // Cursor for right side partition
     boolean eosl;                   // Whether end of stream (left table) is reached
     boolean eosr;                   // Whether end of stream (right table) is reached
-    boolean isFirstLeft;
-    boolean isFirstRight;
+    boolean isFirstLeft;            // Whether first time left is accessed
+    boolean isFirstRight;           // Whether first time right is accessed
 
     public SortMergeJoin(Join jn) {
         super(jn.getLeft(), jn.getRight(), jn.getConditionList(), jn.getOpType());
@@ -152,6 +152,9 @@ public class SortMergeJoin extends Join {
         return outbatch;
     }
 
+    /**
+     * Partition left tuples
+     */
     public ArrayList<Tuple> partitionLeft() {
         ArrayList<Tuple> leftpart = new ArrayList<>();
         leftpart.add(lefttuple);
@@ -164,6 +167,9 @@ public class SortMergeJoin extends Join {
         return leftpart;
     }
 
+    /**
+     * Partition right tuples
+     */
     public ArrayList<Tuple> partitionRight() {
         ArrayList<Tuple> rightpart = new ArrayList<>();
         rightpart.add(righttuple);
@@ -176,6 +182,9 @@ public class SortMergeJoin extends Join {
         return rightpart;
     }
 
+    /**
+     * Retrive a single tuple from the left operator
+     */
     public Tuple getLeftTuple() {
         if (isFirstLeft || (leftbatch != null && lcurs == leftbatch.size())) {
             leftbatch = left.next();
@@ -191,6 +200,9 @@ public class SortMergeJoin extends Join {
         return lt;
     }
 
+    /**
+     * Retrive a single tuple from the right operator
+     */
     public Tuple getRightTuple() {
         if (isFirstRight || (rightbatch != null && rcurs == rightbatch.size())) {
             rightbatch = right.next();
