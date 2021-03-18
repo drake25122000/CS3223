@@ -115,7 +115,7 @@ public class OrderBy extends Operator {
         ArrayList<Attribute> newattr = new ArrayList<>();
         for (int i = 0; i < attrset.size(); ++i)
             newattr.add((Attribute) attrset.get(i).clone());
-        Distinct newDist = new Distinct(newbase, newattr, optype, numOfBuff);
+        OrderBy newDist = new OrderBy(newbase, newattr, OpType.ORDERBY, numOfBuff);
         Schema newSchema = newbase.getSchema().subSchema(newattr);
         newDist.setSchema(newSchema);
         return newDist;

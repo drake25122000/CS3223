@@ -19,13 +19,13 @@ public class RandomInitialPlan {
 
     ArrayList<Attribute> projectlist;
     ArrayList<String> fromlist;
-    ArrayList<Condition> selectionlist;   // List of select conditons
-    ArrayList<Condition> joinlist;        // List of join conditions
-    ArrayList<Attribute> groupbylist;     //
+    ArrayList<Condition> selectionlist;     // List of select conditons
+    ArrayList<Condition> joinlist;          // List of join conditions
+    ArrayList<Attribute> groupbylist;       //
     ArrayList<Attribute> orderbylist;
-    int numJoin;            // Number of joins in this query
+    int numJoin;                            // Number of joins in this query
     HashMap<String, Operator> tab_op_hash;  // Table name to the Operator
-    Operator root;          // Root of the query plan tree
+    Operator root;                          // Root of the query plan tree
 
     public RandomInitialPlan(SQLQuery sqlquery) {
         this.sqlquery = sqlquery;
@@ -71,6 +71,7 @@ public class RandomInitialPlan {
         }
 
         return root;
+
     }
 
     /**
@@ -125,7 +126,6 @@ public class RandomInitialPlan {
         //Schema newSchema = base.getSchema().subSchema(groupbylist);
         sort.setSchema(root.getSchema());
         root = sort;
-
 
     }
 

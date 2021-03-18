@@ -85,6 +85,16 @@ public class Project extends Operator {
 
             int index = baseSchema.indexOf(attr.getBaseAttribute());
             attrIndex[i] = index;
+		
+		
+			if (attr.getAggType() == Attribute.AVG) {
+				System.err.println("AVG function is not implemented");
+				System.exit(1);
+			}
+			if (attr.getAggType() == Attribute.SUM) {
+				System.err.println("SUM function is not implemented");
+				System.exit(1);
+			}
 			
 			if (attr.getAggType() == Attribute.MAX) {
 				aggIndex[i] = 1;
