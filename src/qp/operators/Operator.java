@@ -11,6 +11,10 @@ public class Operator {
     int optype;     // Whether it is OpType.SELECT/ Optype.PROJECT/OpType.JOIN
     Schema schema;  // Schema of the result at this operator
 
+    public Operator getBase() {
+        return this;
+    }
+
     public Operator(int type) {
         this.optype = type;
     }
@@ -52,13 +56,3 @@ public class Operator {
     }
 
 }
-
-
-
-
-
-
-
-
-
-

@@ -3,15 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="c42011ac-40b6-4290-8016-e293a610da82" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/parser/CUP$parser$actions.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/parser/CUP$parser$actions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/parser/Scaner.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/parser/Scaner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/parser/parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/parser/parser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/parser/sym.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/parser/sym.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/parser/Scaner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/parser/parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/parser/parser.cup" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/parser/parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/parser/parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/parser/scaner.lex" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/parser/scaner.lex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/parser/sym.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/parser/sym.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/RandomDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/RandomDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/qp/operators/Operator.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/operators/Operator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/qp/operators/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/operators/Project.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/qp/optimizer/PlanCost.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/optimizer/PlanCost.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/qp/optimizer/RandomOptimizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/optimizer/RandomOptimizer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/qp/operators/Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/operators/Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/qp/operators/Operator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/operators/Operator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/qp/operators/OrderBy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/operators/OrderBy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/qp/optimizer/PlanCost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/optimizer/PlanCost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/qp/optimizer/RandomOptimizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/optimizer/RandomOptimizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/CUSTOMER.md" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/CUSTOMER.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/CUSTOMER.stat" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/CUSTOMER.stat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/CUSTOMER.tbl" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/CUSTOMER.tbl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/CUSTOMER.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/CUSTOMER.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/query4.sql" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/query4.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,26 +117,26 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="640" y="153" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1613906705599" />
-    <state width="1174" height="179" key="GridCell.Tab.0.bottom" timestamp="1614273225733">
+    <state width="1130" height="178" key="GridCell.Tab.0.bottom" timestamp="1616037855766">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1174" height="186" key="GridCell.Tab.0.bottom/0.0.1536.864/-1920.0.1536.864@-1920.0.1536.864" timestamp="1613719436167" />
-    <state width="1174" height="179" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1614273225733" />
-    <state width="1174" height="179" key="GridCell.Tab.0.center" timestamp="1614273225732">
+    <state width="1130" height="178" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1616037855766" />
+    <state width="1130" height="178" key="GridCell.Tab.0.center" timestamp="1616037855766">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1174" height="186" key="GridCell.Tab.0.center/0.0.1536.864/-1920.0.1536.864@-1920.0.1536.864" timestamp="1613719436167" />
-    <state width="1174" height="179" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1614273225732" />
-    <state width="1174" height="179" key="GridCell.Tab.0.left" timestamp="1614273225732">
+    <state width="1130" height="178" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1616037855766" />
+    <state width="1130" height="178" key="GridCell.Tab.0.left" timestamp="1616037855766">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1174" height="186" key="GridCell.Tab.0.left/0.0.1536.864/-1920.0.1536.864@-1920.0.1536.864" timestamp="1613719436167" />
-    <state width="1174" height="179" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1614273225732" />
-    <state width="1174" height="179" key="GridCell.Tab.0.right" timestamp="1614273225732">
+    <state width="1130" height="178" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1616037855766" />
+    <state width="1130" height="178" key="GridCell.Tab.0.right" timestamp="1616037855766">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1174" height="186" key="GridCell.Tab.0.right/0.0.1536.864/-1920.0.1536.864@-1920.0.1536.864" timestamp="1613719436167" />
-    <state width="1174" height="179" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1614273225732" />
+    <state width="1130" height="178" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1616037855766" />
     <state x="169" y="13" key="SettingsEditor" timestamp="1612328158664">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -139,12 +145,12 @@
       <screen x="-1920" y="0" width="1536" height="864" />
     </state>
     <state width="254" height="198" key="ShowFilterAction_Filter_Popup/0.0.1536.864/-1920.0.1536.864@-1920.0.1536.864" timestamp="1613703776920" />
-    <state x="357" y="260" key="com.intellij.ide.util.TipDialog" timestamp="1614168886786">
+    <state x="357" y="260" key="com.intellij.ide.util.TipDialog" timestamp="1616036906749">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="357" y="260" key="com.intellij.ide.util.TipDialog/0.0.1536.864/-1920.0.1536.864@0.0.1536.864" timestamp="1613881537165" />
     <state x="357" y="260" key="com.intellij.ide.util.TipDialog/0.0.1536.864/1920.0.1280.720@0.0.1536.864" timestamp="1613844512614" />
-    <state x="357" y="260" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1614168886786" />
+    <state x="357" y="260" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1616036906749" />
     <state x="669" y="316" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614222419133">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -157,10 +163,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="300" y="11" key="new project wizard/0.0.1536.864@0.0.1536.864" timestamp="1613906707159" />
-    <state x="430" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1613847311453">
+    <state x="430" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1616037387629">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="-1489" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864/-1920.0.1536.864@-1920.0.1536.864" timestamp="1613710163371" />
-    <state x="430" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1613847311453" />
+    <state x="430" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1616037387629" />
   </component>
 </project>

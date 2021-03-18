@@ -110,6 +110,16 @@ public class Debug {
             PPrint(((Select) node).getCondition());
             System.out.print(")");
 
+        } else if (optype == OpType.DISTINCT) {
+            System.out.print("Distinct(");
+            PPrint(((Distinct) node).getBase());
+            System.out.print(")");
+
+        } else if (optype == OpType.ORDERBY) {
+            System.out.print("OrderBy(");
+            PPrint(((OrderBy) node).getBase());
+            System.out.print(")");
+
         } else if (optype == OpType.PROJECT) {
             System.out.print("Project(");
             PPrint(((Project) node).getBase());
