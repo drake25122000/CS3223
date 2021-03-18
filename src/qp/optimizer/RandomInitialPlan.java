@@ -127,7 +127,6 @@ public class RandomInitialPlan {
         sort.setSchema(root.getSchema());
         root = sort;
 
-
     }
 
     /**

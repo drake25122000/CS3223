@@ -24,7 +24,6 @@ public class Sort extends Operator {
     TupleReader tr;                     // tuple reader
     int numSortedRuns;                  // Number of sorted runs
     String rfname;                      // The file name where the right table is materialized
-    SortedRun finalSortedRun;           // Final single sorted run from out
     static int desc = 1;
 
     /**
@@ -36,7 +35,6 @@ public class Sort extends Operator {
     int start;                          // Cursor position in the input buffer
     Schema schema;                      // Schema of th
     int numOfBuff;                      // Number of buffer available
-    SortedRun finale;
 
     /**
      * constructor
@@ -105,12 +103,10 @@ public class Sort extends Operator {
         while ((temp = base.next()) != null) {
             // Initialize target file name
             rfname = "Stemp-" + String.valueOf(iteration) + "-" + String.valueOf(filenum);
-            //System.out.println(temp.size());
 
 
             for (int k = 0; k < numOfBuff; k++) {
                 for (int p = 0; p < temp.size(); p++) {
-                    //System.out.println(temp.get(p));
                     tempTuples.add(temp.get(p));
                 }
 
@@ -119,19 +115,12 @@ public class Sort extends Operator {
                     if ((temp = base.next()) == null) break;
                 }
             }
-            //System.out.println("Count: " + count);
 
             // In memory sort
             Collections.sort(tempTuples, (tup1, tup2) -> compareTuples(tup1, tup2));
 
             // Update number of max tuples after merging
             maxNumTuples = tempTuples.size() > maxNumTuples ? tempTuples.size() : maxNumTuples;
-
-            /*for (int l = 0 ; l < tempTuples.size() ; l++) {
-                System.out.println(tempTuples.get(l));
-            }*/
-
-            /*System.out.println("--____----_____--");*/
 
             // Start tuple writer
             TupleWriter tw = new TupleWriter(rfname, tempTuples.size());
@@ -144,7 +133,6 @@ public class Sort extends Operator {
 
 
             tw.close();
-            //out.writeObject(new SortedRun(tempTuples));
             numSortedRuns++;
             filenum++;
             tempTuples = new ArrayList<>();
