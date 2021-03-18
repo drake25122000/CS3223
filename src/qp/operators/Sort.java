@@ -101,7 +101,7 @@ public class Sort extends Operator {
 
         System.out.println("_________");
 
-            // Generate sorted runs
+        // Generate sorted runs
         while ((temp = base.next()) != null) {
             // Initialize target file name
             rfname = "Stemp-" + String.valueOf(iteration) + "-" + String.valueOf(filenum);
