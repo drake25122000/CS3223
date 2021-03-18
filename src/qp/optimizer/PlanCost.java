@@ -154,9 +154,7 @@ public class PlanCost {
                 joincost = numOfLeftBlocks * rightpages;
                 break;
             case JoinType.SORTMERGE:
-                long leftcost = getSortStatistics(node.getLeft());
-                long rightcost = getSortStatistics(node.getRight());
-                joincost = leftcost + rightcost + leftpages + rightpages;
+                joincost = leftpages + rightpages;
                 break;
             default:
                 System.out.println("join type is not supported");
@@ -283,15 +281,8 @@ public class PlanCost {
     }
 
     protected long getStatistics(Sort node) {
-        return getSortStatistics(node);
-    }
-
-    // To calculate the Sorting Cost
-    protected long getSortStatistics(Operator node) {
-
         long basetuples = calculateCost(node.getBase());
         Schema baseschema = node.getBase().getSchema();
-
 
         /** Get size of the tuple in output & correspondigly calculate
          ** buffer capacity, i.e., number of tuples per page **/
@@ -302,17 +293,17 @@ public class PlanCost {
 
         int numberOfSortedRuns = (int) Math.ceil(1.0 * basepages/ numOfBuffer);
         int numberOfMergingPasses = (int) Math.ceil(Math.log(numberOfSortedRuns)/ Math.log(numOfBuffer - 1));
-        long finalCost = basepages + 2 * basepages * numberOfMergingPasses;
+        cost = cost + basepages + 2 * basepages * numberOfMergingPasses;
 
-        return finalCost;
+        return basetuples;
     }
 
     protected long getStatistics(Distinct node) {
-        return getSortStatistics(node);
+        return calculateCost(node.getBase());
     }
 
     protected long getStatistics(OrderBy node) {
-        return getSortStatistics(node);
+        return calculateCost(node.getBase());
     }
 
 }

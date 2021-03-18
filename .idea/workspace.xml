@@ -20,8 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c42011ac-40b6-4290-8016-e293a610da82" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -144,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616094697870</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update classes">
+      <created>1616096359981</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1616096359982</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -164,7 +169,8 @@
     <MESSAGE value="Add documentation" />
     <MESSAGE value="Cleanup files" />
     <MESSAGE value="Add write-up" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add write-up" />
+    <MESSAGE value="Update classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update classes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="115" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612265721055">
@@ -254,13 +260,13 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="253" y="407" width="816" height="389" key="dock-window-1/0.0.1536.864@0.0.1536.864" timestamp="1616038193224" />
-    <state x="-1312" y="119" width="923" height="718" key="find.popup" timestamp="1616073999105">
+    <state x="-1312" y="119" width="923" height="718" key="find.popup" timestamp="1616097128725">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1434" y="99" width="738" height="596" key="find.popup/0.0.1536.864/-1920.0.1536.864@-1920.0.1536.864" timestamp="1615984570344" />
     <state x="486" y="99" width="738" height="596" key="find.popup/0.0.1536.864/-1920.0.1536.864@0.0.1536.864" timestamp="1615983241756" />
     <state x="486" y="99" width="738" height="596" key="find.popup/0.0.1536.864@0.0.1536.864" timestamp="1615989870306" />
-    <state x="-1312" y="119" width="923" height="718" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1616073999105" />
+    <state x="-1312" y="119" width="923" height="718" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1616097128725" />
     <state x="300" y="11" key="new project wizard" timestamp="1615913773328">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
