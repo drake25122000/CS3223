@@ -86,7 +86,9 @@ public class Project extends Operator {
             int index = baseSchema.indexOf(attr.getBaseAttribute());
             attrIndex[i] = index;
 		
-		
+			// Following lines check the aggregate type of the attributes and assign a value to aggIndex[] 
+			// A starting value is also initialised in aggData[] depending on the aggType.
+			// AVG and SUM functions are not implemented.
 			if (attr.getAggType() == Attribute.AVG) {
 				System.err.println("AVG function is not implemented");
 				System.exit(1);
@@ -122,9 +124,9 @@ public class Project extends Operator {
         outbatch = new Batch(batchsize);
         /** all the tuples in the inbuffer goes to the output buffer **/
         inbatch = base.next();
-		//System.out.println("Enter");
         
 		
+	    	// This will write out the aggregate results when there is no more tuples to be read
 		if(aggPresent) {
 			if (inbatch == null) {
 				ArrayList<Object>aggResult = new ArrayList<>();
@@ -142,19 +144,18 @@ public class Project extends Operator {
 		if (inbatch == null) {	
 			return null;
         }
+	    
         for (int i = 0; i < inbatch.size(); i++) {
             Tuple basetuple = inbatch.get(i);
-           // Debug.PPrint(basetuple);
-            //System.out.println();
             ArrayList<Object> present = new ArrayList<>();
             
 			for (int j = 0; j < attrset.size(); j++) {
 				Object data = basetuple.dataAt(attrIndex[j]);
 	            
 				if(aggIndex[j] == 0) {
-					present.add(data);
+					present.add(data); // we project out the attribute if there is no aggregate function on it
 				}
-				else if(aggIndex[j] == 1) {
+				else if(aggIndex[j] == 1) { // Calculation for MAX function
 					aggPresent = true;
 						try {
 							if((int)data > (int)aggData[j]) {
@@ -165,7 +166,7 @@ public class Project extends Operator {
 								System.exit(1);
 						}
 				}
-				else if(aggIndex[j] == 2) {
+				else if(aggIndex[j] == 2) { // Calculation for MIN function
 					aggPresent = true;
 						try {
 							if((int)data <(int)aggData[j]) {
@@ -176,12 +177,12 @@ public class Project extends Operator {
 								System.exit(1);
 						}
 				}
-				else if(aggIndex[j] == 3) {
+				else if(aggIndex[j] == 3) { // Calculation for COUNT function
 					aggPresent = true;
 					aggData[j] = (int)aggData[j] + 1;
 				}
 			}	
-			if (!aggPresent) {
+			if (!aggPresent) { // Only project out attributes if there is no aggregate function
 				Tuple outtuple = new Tuple(present);
 				outbatch.add(outtuple);
 			}
