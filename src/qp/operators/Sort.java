@@ -25,6 +25,8 @@ public class Sort extends Operator {
     int numSortedRuns;                  // Number of sorted runs
     String rfname;                      // The file name where the right table is materialized
     static int desc = 1;
+    int tablenum;
+    static int globaltablenum = 0;
 
     /**
      * The following fields are required during
@@ -46,7 +48,8 @@ public class Sort extends Operator {
         this.con = con;
         this.numOfBuff = numOfBuff;
         this.attList = attList;
-
+        globaltablenum++;
+        this.tablenum = globaltablenum;
     }
 
     public Operator getBase() {
@@ -99,7 +102,7 @@ public class Sort extends Operator {
         // Generate sorted runs
         while ((temp = base.next()) != null) {
             // Initialize target file name
-            rfname = "Stemp-" + String.valueOf(iteration) + "-" + String.valueOf(filenum);
+            rfname = "Stemp-" + tablenum + "_" + String.valueOf(iteration) + "-" + String.valueOf(filenum);
 
 
             for (int k = 0; k < numOfBuff; k++) {
@@ -157,7 +160,7 @@ public class Sort extends Operator {
                         break;
                     } else {
                         // To add sorted run file name to the list
-                        rfname = "Stemp-" + String.valueOf(iteration) + "-" + String.valueOf(countSortedRuns);
+                        rfname = "Stemp-" + tablenum + "_" + String.valueOf(iteration) + "-" + String.valueOf(countSortedRuns);
                         indexes.add(rfname);
                         // To count number of sorted runs that are merged in this process
                         countSortedRuns++;
@@ -183,7 +186,7 @@ public class Sort extends Operator {
         filenum = 0;
 
         // Update rf name to the latest sorted run file
-        rfname = "Stemp-" + String.valueOf(iteration) + "-" + String.valueOf(filenum);
+        rfname = "Stemp-" + tablenum + "_" + String.valueOf(iteration) + "-" + String.valueOf(filenum);
 
         // Open a new sorted run file
         tr = new TupleReader(rfname, batchsize);
@@ -215,7 +218,7 @@ public class Sort extends Operator {
         // Initiate number of out batch after merge
         Batch tempOutBatch = new Batch(batchsize);
 
-        TupleWriter tw = new TupleWriter("Stemp-" + String.valueOf(iteration + 1) + "-" + String.valueOf(outfilenum), maxNumTuples);
+        TupleWriter tw = new TupleWriter("Stemp-" + tablenum + "_" + String.valueOf(iteration + 1) + "-" + String.valueOf(outfilenum), maxNumTuples);
 
         tw.open();
 
@@ -319,6 +322,8 @@ public class Sort extends Operator {
      * * i.e., no more pages to output
      **/
     public boolean close() {
+        File file = new File(rfname);
+        file.delete();
         base.close();    // Added base.close
         return true;
     }
