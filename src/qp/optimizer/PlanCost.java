@@ -315,8 +315,4 @@ public class PlanCost {
         return getSortStatistics(node);
     }
 
-    protected long getStatistics(Distinct node) {
-        return getSortStatistics(node);
-    }
-
 }
