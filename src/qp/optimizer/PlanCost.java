@@ -282,12 +282,6 @@ public class PlanCost {
 
     protected long getStatistics(Sort node) {
         return getSortStatistics(node);
-<<<<<<< HEAD
-    }
-
-    // To calculate the Sorting Cost
-    protected long getSortStatistics(Operator node) {
-=======
     }
 
     // To calculate the Sorting Cost
@@ -318,35 +312,9 @@ public class PlanCost {
     protected long getStatistics(OrderBy node) {
         return getSortStatistics(node);
     }
-}
-
-
->>>>>>> 580720da7140813f4346776b53352abea70d9249
-
-        long tuples = calculateCost(node.getBase());
-
-        /** Get size of the tuple in output & correspondigly calculate
-         ** buffer capacity, i.e., number of tuples per page **/
-        long tuplesize = node.getSchema().getTupleSize();
-
-        long inCapacity = (long) Math.floor(1.0 * Batch.getPageSize() / tuplesize);
-
-        long tuplesInPages = (long) Math.ceil(1.0 * tuples / inCapacity);
-
-        int numOfBuffer = BufferManager.numBuffer;
-
-        int numberOfSortedRuns = (int) Math.ceil(1.0 * tuplesInPages/ numOfBuffer);
-        int numberOfPasses = 1 + (int) Math.ceil(Math.log(numberOfSortedRuns)/ Math.log(numOfBuffer - 1));
-        long finalCost = 2 * tuplesInPages * numberOfPasses;
-
-        return finalCost;
-    }
 
     protected long getStatistics(Distinct node) {
         return getSortStatistics(node);
     }
 
-    protected long getStatistics(OrderBy node) {
-        return getSortStatistics(node);
-    }
 }
