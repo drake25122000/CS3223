@@ -162,7 +162,7 @@ public class SortMergeJoin extends Join {
         }
         lcurs--;
         return leftpart;
-}
+    }
 
     public ArrayList<Tuple> partitionRight() {
         ArrayList<Tuple> rightpart = new ArrayList<>();
