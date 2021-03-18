@@ -1,4 +1,4 @@
- /**
+/**
  * Batch represents a page
  **/
 
@@ -64,6 +64,10 @@ public class Batch implements Serializable {
 
     public void remove(int i) {
         tuples.remove(i);
+    }
+
+    public Tuple poll() {
+        return tuples.remove(0);
     }
 
     public void set(Tuple t, int i) {

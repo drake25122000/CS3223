@@ -150,7 +150,7 @@ public class PlanCost {
                 joincost = leftpages * rightpages;
                 break;
             case JoinType.BLOCKNESTED:
-                int numOfLeftBlocks = (int) (leftpages / (numbuff - 2));
+                int numOfLeftBlocks = (int) Math.ceil(1.0 * leftpages / (numbuff - 2));
                 joincost = numOfLeftBlocks * rightpages;
                 break;
             default:
@@ -278,15 +278,36 @@ public class PlanCost {
     }
 
     protected long getStatistics(Sort node) {
-        return 1;
+        return getSortStatistics(node);
+    }
+
+    // To calculate the Sorting Cost
+    protected long getSortStatistics(Operator node) {
+
+        long basetuples = calculateCost(node.getBase());
+        Schema baseschema = node.getBase().getSchema();
+
+
+        /** Get size of the tuple in output & correspondigly calculate
+         ** buffer capacity, i.e., number of tuples per page **/
+        long basetuplesize = baseschema.getTupleSize();
+        long basecapacity = Math.max(1, Batch.getPageSize() / basetuplesize);
+        long basepages = (long) Math.ceil(((double) basetuples) / (double) basecapacity);
+        int numOfBuffer = BufferManager.numBuffer;
+
+        int numberOfSortedRuns = (int) Math.ceil(1.0 * basepages/ numOfBuffer);
+        int numberOfPasses = 1 + (int) Math.ceil(Math.log(numberOfSortedRuns)/ Math.log(numOfBuffer - 1));
+        long finalCost = 2 * basepages * numberOfPasses;
+
+        return finalCost;
     }
 
     protected long getStatistics(Distinct node) {
-        return 1;
+        return getSortStatistics(node);
     }
 
     protected long getStatistics(OrderBy node) {
-        return 1;
+        return getSortStatistics(node);
     }
 }
 
