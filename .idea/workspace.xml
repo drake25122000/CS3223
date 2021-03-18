@@ -3,21 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c42011ac-40b6-4290-8016-e293a610da82" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/RandomDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/RandomDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/operators/Operator.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/operators/Operator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/operators/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/operators/Project.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/optimizer/PlanCost.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/optimizer/PlanCost.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/optimizer/RandomOptimizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/optimizer/RandomOptimizer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/operators/Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/operators/Debug.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/operators/Operator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/operators/Operator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/operators/OrderBy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/operators/OrderBy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/optimizer/PlanCost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/optimizer/PlanCost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/optimizer/RandomOptimizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/optimizer/RandomOptimizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcases/CUSTOMER.md" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/CUSTOMER.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcases/CUSTOMER.stat" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/CUSTOMER.stat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcases/CUSTOMER.tbl" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/CUSTOMER.tbl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcases/CUSTOMER.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/CUSTOMER.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcases/query4.sql" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/query4.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
