@@ -301,8 +301,8 @@ public class PlanCost {
         int numOfBuffer = BufferManager.numBuffer;
 
         int numberOfSortedRuns = (int) Math.ceil(1.0 * basepages/ numOfBuffer);
-        int numberOfPasses = 1 + (int) Math.ceil(Math.log(numberOfSortedRuns)/ Math.log(numOfBuffer - 1));
-        long finalCost = 2 * basepages * numberOfPasses;
+        int numberOfMergingPasses = (int) Math.ceil(Math.log(numberOfSortedRuns)/ Math.log(numOfBuffer - 1));
+        long finalCost = basepages + 2 * basepages * numberOfMergingPasses;
 
         return finalCost;
     }
