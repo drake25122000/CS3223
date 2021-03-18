@@ -96,9 +96,6 @@ public class Sort extends Operator {
         // Initialize arraylist of tuples to be insert to SortedRuns
         ArrayList<Tuple> tempTuples = new ArrayList<>();
 
-
-        System.out.println("_________");
-
         // Generate sorted runs
         while ((temp = base.next()) != null) {
             // Initialize target file name
@@ -166,7 +163,6 @@ public class Sort extends Operator {
                         countSortedRuns++;
                     }
                 }
-                //System.out.println(indexes);
                 numSortedRuns++;
                 mergeRuns(indexes);
 
@@ -181,7 +177,6 @@ public class Sort extends Operator {
 
             // Reset oufilenum for new iteration
             outfilenum = 0;
-
         }
 
         // Reset filenum for new iteration
@@ -210,7 +205,6 @@ public class Sort extends Operator {
     }
 
     public void mergeRuns(ArrayList<String> indexes) {
-        //System.out.println(indexes);
 
         // Initiate number of buffer
         ArrayList<Batch> batches = new ArrayList<>();
@@ -245,10 +239,7 @@ public class Sort extends Operator {
 
                 temp.add(tempReader.next());
             }
-
-            /*for (int k = 0 ; k < temp.size(); k++) {
-                System.out.println(temp.get(k));
-            }*/
+          
             batches.add(temp);
             readers.add(tempReader);
         }
@@ -273,7 +264,6 @@ public class Sort extends Operator {
 
             if (tempOutBatch.isFull()) {
                 while (!tempOutBatch.isEmpty()) {
-                    //System.out.println(tempOutBatch.get(0));
                     tw.next(tempOutBatch.poll());
                     count++;
                 }
@@ -287,12 +277,9 @@ public class Sort extends Operator {
         }
 
         while (!tempOutBatch.isEmpty()) {
-            //System.out.println(tempOutBatch.get(0));
             tw.next(tempOutBatch.poll());
             count++;
         }
-
-        //System.out.println("-----");
 
         maxNumTuples = count > maxNumTuples ? count : maxNumTuples;
 
@@ -300,39 +287,6 @@ public class Sort extends Operator {
         outfilenum++;
 
     }
-
-/*    public void mergeRuns(ArrayList<SortedRun> sortedruns) {
-
-        SortedRun temp = new SortedRun(new ArrayList<Tuple>());
-        int minimum = 0;
-
-        // Check if all of the tuple in the sorted runs have been polled
-        while (!isOverMergeProcess(sortedruns)) {
-
-            // Check if sorted run with index minimum is already empty
-            while (sortedruns.get(minimum).isEmpty()) {
-                minimum++;
-            }
-
-            // Get the smallest tuple from the first element of every sorted runs
-            for (int i = minimum + 1 ; i < sortedruns.size() ; i++) {
-                if (!sortedruns.get(i).isEmpty() && compareTuples(sortedruns.get(i).get(0), sortedruns.get(minimum).get(0)) < 0 ) {
-                    minimum = i;
-                }
-            }
-            Tuple tempTuple = sortedruns.get(minimum).poll(0);
-            temp.add(tempTuple);
-            minimum = 0;
-        }
-
-        try {
-            // Write temp object to file with rfname as the name of the file
-            out.writeObject(temp);
-        } catch (IOException io) {
-            System.out.println("Sort: Error writing to temporary file");
-            System.exit(1);
-        }
-    }*/
 
     /**
      * returns a batch of tuples that satisfies the
