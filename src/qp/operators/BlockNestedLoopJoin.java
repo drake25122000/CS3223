@@ -188,9 +188,6 @@ public class BlockNestedLoopJoin extends Join {
                                                 rcurs = k + 1;
                                             }
                                         }
-                                        /*for (int z = 0 ; z < outbatch.size() ; z++) {
-                                            System.out.println(outbatch.get(0));
-                                        }*/
                                         return outbatch;
                                     }
                                 }

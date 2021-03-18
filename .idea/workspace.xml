@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c42011ac-40b6-4290-8016-e293a610da82" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/operators/BlockNestedLoopJoin.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/operators/BlockNestedLoopJoin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/operators/Distinct.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/operators/Distinct.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/operators/JoinType.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/operators/JoinType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/optimizer/PlanCost.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/optimizer/PlanCost.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/qp/optimizer/RandomInitialPlan.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/qp/optimizer/RandomInitialPlan.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/qp/operators/BlockNestedLoopJoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/operators/BlockNestedLoopJoin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qp/operators/Distinct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/qp/operators/Distinct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcases/EMPLOYEES.det" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/EMPLOYEES.det" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcases/query13.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcases/query3.sql" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/query3.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
