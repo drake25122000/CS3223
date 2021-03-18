@@ -108,12 +108,10 @@ public class Distinct extends Operator {
                 if (trackTuple == null) {
                     outbatch.add(fromBase);
                     trackTuple = fromBase;
-                    System.out.println(fromBase);
                 } else {
                     if ( compareTuples(fromBase, trackTuple) != 0 ) {
                         outbatch.add(fromBase);
                         trackTuple = fromBase;
-                        System.out.println(fromBase);
 
                     }
                 }

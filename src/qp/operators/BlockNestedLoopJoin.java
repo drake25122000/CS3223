@@ -27,6 +27,7 @@ public class BlockNestedLoopJoin extends Join {
     int lbcurs;                     // Cursor for left side block
     int lcurs;                      // Cursor for left side buffer
     int rcurs;                      // Cursor for right side buffer
+    int lastIndex;                  //
     boolean eosl;                   // Whether end of stream (left table) is reached
     boolean eosr;                   // Whether end of stream (right table) is reached
 
@@ -61,6 +62,7 @@ public class BlockNestedLoopJoin extends Join {
         /** initialize the cursors of input buffers **/
         lcurs = 0;
         rcurs = 0;
+        lastIndex = 0;
         eosl = false;
         /** because right stream is to be repetitively scanned
          ** if it reached end, we have to start new scan
@@ -109,11 +111,10 @@ public class BlockNestedLoopJoin extends Join {
         }
         outbatch = new Batch(batchsize);
         while (!outbatch.isFull()) {
-            int lastIndex = 0;
-            if (lcurs == 0 && eosr == true) {
+            if (lbcurs == 0 && eosr == true) {
                 /** new left pages are to be fetched**/
+                lastIndex = 0;
                 leftbatch = new Batch[getNumBuff() - 2];
-
                 for (int point = 0 ; point < leftbatch.length ; point++) {
                     leftbatch[point] = (Batch) left.next();
                     if (leftbatch[point] == null) break;
@@ -138,7 +139,7 @@ public class BlockNestedLoopJoin extends Join {
             }
             while (eosr == false) {
                 try {
-                    if (rcurs == 0 && lcurs == 0) {
+                    if (lbcurs == 0 && rcurs == 0 && lcurs == 0) {
                         rightbatch = (Batch) in.readObject();
                     }
                     for (i = lbcurs; i < lastIndex; ++i){
