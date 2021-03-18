@@ -1,5 +1,11 @@
 # CS3223 Project
 
+Christian Drake Martin, A0200700H
+
+Justin Tzuriel Krisnahadi, A0200794H
+
+Pang Yong Jia, A0167896A
+
 ## Features Implemented
 
 ### External Sort
