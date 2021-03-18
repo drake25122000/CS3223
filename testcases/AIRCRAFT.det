@@ -1,5 +1,5 @@
 3
-20
-aid INTEGER 20000 PK 4
-aname INTEGER 500 NK 12
-cruisingrange INTEGER 2500 NK 4
+108
+aid INTEGER 30000 PK 4
+aname STRING 50 NK 100
+cruisingrange INTEGER 4000 NK 4
